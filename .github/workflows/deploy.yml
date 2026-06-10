@@ -20,7 +20,7 @@ jobs:
           EOF
           ID=$(aws ssm send-command \
             --instance-ids i-010edc7a87864b096 \
-            --document-name AWS-RunShellCommand \
+            --document-name AWS-RunShellScript \
             --parameters file://params.json \
             --region ap-southeast-2 \
             --query Command.CommandId --output text)
