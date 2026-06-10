@@ -1,0 +1,14 @@
+[Unit]
+Description=SubSense subscription tracker
+After=network.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/subsense
+EnvironmentFile=/etc/subsense.env
+ExecStart=/usr/bin/java -Xmx320m -jar /home/ec2-user/subsense/target/subsense-0.0.1.jar
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
